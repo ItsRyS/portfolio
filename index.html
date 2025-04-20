@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Rys Portfolio</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="icon" type="image/png" href="./src/assets/favicon-optimized.png" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Sarabun:wght@200;400;600&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar (ซ้าย) -->
+    <div class="sidebar">
+      <div class="profile">
+        <div class="profile-img">
+          <img src="/src/assets/img/profile.jpg" alt="profile" style="width: 200px; height: inherit" />
+        </div>
+        <div class="profile-name">
+          <h2>Patthanan Jaichuai</h2>
+          <p>Programer in Thailand</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <p>&copy; <span id="current-year"></span> All rights reserved</p>
+
+        <ul class="contact">
+          <li><i class="bx bx-map"></i> Lampang 52240, Thailand</li>
+          <li><i class="bx bx-phone"></i> 089-266-3290</li>
+          <li>
+            <i class="bx bx-envelope"></i>
+            <a href="mailto:Patthananlt@gmail.com">Patthananlt@gmail.com</a>
+          </li>
+          <li>
+            <i class="bx bxl-github"></i>
+            <a href="https://github.com/ItsRyS" target="_blank">github.com/ItsRyS</a>
+          </li>
+          <li>
+            <i class="bx bxl-linkedin"></i>
+            <a href="https://www.linkedin.com/in/ci2p-nut" target="_blank">linkedin.com/in/ci2p-nut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content (ขวา) -->
+    <div class="main-content">
+      <div id="home" class="section">
+        <h1>I'm PJ.Nut</h1>
+        <h4><a href="#">Download My CV</a></h4>
+      </div>
+
+      <div id="about" class="section">
+        <h2>Who Am I?</h2>
+        <p>
+          Currently a third-year student at Rajamangala University of
+          Technology Lanna Chiang Mai, majoring in Computer Engineering. I
+          have a strong interest in system engineering and web development. I
+          enjoy learning about topics related to my interests.
+        </p>
+      </div>
+
+      <div id="skills" class="section">
+        <h2>My Skills</h2>
+        <p>
+          <strong>Hard skill</strong>
+        <ul>
+          <li>Programing : JavaScript, Dart, Python, C/C++</li>
+          <li>Framework : React, Node, Flutter</li>
+          <li>Tools : Git, MySQL, Firebase, Virtual machine, Raspberry Pi (Debian), VS Code</li>
+        </ul>
+        <strong>Soft Skill</strong>
+        <ul>
+          <li>Fast Learner</li>
+          <li>Communication Teamwork</li>
+          <li>Adaptability & Flexibility</li>
+        </ul>
+
+        </p>
+      </div>
+
+      <div id="education" class="section">
+        <h2>EDUCATION</h2>
+        <button type="button" class="collapsible">Bachelor's Degree</button>
+        <div class="content">
+          <p>
+            Rajamangala University of Technology Lanna Computer Engineer 2022 -
+            Present
+          </p>
+        </div>
+        <button type="button" class="collapsible">HIGH VOCATIONAL CERTIFICATE</button>
+        <div class="content">
+          <p>Lampang Technical College Information Technology and
+            Software Developer 2020 - 2021</p>
+        </div>
+
+      </div>
+
+      <div id="experience" class="section">
+        <h2>PERSONAL EXPERIENCE</h2>
+        <p>
+          Rajamangala University of Technology Lanna Lampang Internship
+          (2020-2021) Interned as an Assistant Computer Technical Officer,
+          gaining experience in computer and network equipment, maintenance,
+          installation and troubleshooting Aruba Cisco HPE Products and
+          developing an IoT-based server room temperature monitoring system.
+        </p>  
+        <p>
+          Niti computer Internship (2018) Interned as a Technician Assistant,
+          responsible for repairing computer equipment and various printers.
+        </p>
+          
+        
+      </div>
+
+      <div id="work" class="section">
+        <h2>PERSONAL Work</h2>
+        <p>
+            
+        </p>
+        <div class="col-md-4"><strong>Application for Project Management of The Information Technology</strong> 
+          Department at Lampang Technical College Use modern technology
+          Department at Lampang Technical College, using modern technology
+          reduced instructor workload and paper usage. Duty full - stack
+          development and hosting deployment.</div>
+        <div class="col-md-4"><strong>Solar tracking </strong>
+          Solar tracking,
+          Conducted a research project comparing standard and sun-tracking
+          solar panel efficiency, achieving a 15 - 40% improvement. Duty
+          Designed the ESP32 control and data analysis system.</div>
+        <div class="col-md-4"><strong>Smart Drop</strong>
+          Smart Drop, an invention used in the National Outstanding Vocational
+          Education Innovation : competition, duty designed the ESP32 circuit
+          and system control and overall system management.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+
+</html>
