@@ -1,10 +1,4 @@
-//import './style.css'
-
-
-
-document.querySelector('#app').innerHTML = `
-
- 
-`
-
-setupCounter(document.querySelector('#counter'))
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  });
+  
