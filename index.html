@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Rys Portfolio</title>
+    <title>Rys Portfolio | PJ.Nut - Web Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Fonts & Icons -->
+    <meta
+      name="description"
+      content="Portfolio of Patthanan Jaichuai, a web developer and system engineering enthusiast based in Thailand."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,18 +24,22 @@
       type="image/png"
       href="./src/assets/favicon-optimized.png"
     />
-    <script type="module" src="/src/main.js"></script>
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="./src/main.js" defer></script>
   </head>
 
   <body>
+    <div id="sidebar-overlay"></div>
+    <button id="menu-toggle" aria-label="Open Menu">
+      <i class="bx bx-menu"></i>
+    </button>
     <div class="container">
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="profile">
+      <aside id="sidebar">
+        <div class="sidebar-profile">
           <img
             src="/src/assets/img/profile.jpg"
-            alt="Profile"
+            alt="Profile picture of Patthanan Jaichuai"
             class="profile-img"
           />
           <div class="profile-name">
@@ -42,18 +48,34 @@
           </div>
         </div>
 
-        <nav class="menu">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#experience">Experience</a>
-          <a href="#work">Work</a>
+        <nav class="sidebar-menu" aria-label="Main navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#work">Work</a></li>
+          </ul>
         </nav>
 
-        <div class="sidebar-footer">
+        <footer class="sidebar-footer">
           <p>&copy; <span id="current-year"></span> All rights reserved</p>
+        </footer>
+      </aside>
+
+      <!-- Main Content -->
+      <main id="main-content">
+        <!-- Home -->
+        <section id="home" class="section" aria-label="Intro Section">
+          <div class="intro-text">
+            <h1>PJ.Nut - Web Developer</h1>
+            <p class="subtext">Building modern, scalable web solutions.</p>
+            <a href="#work" class="btn-portfolio">VIEW PORTFOLIO</a>
+          </div>
+
           <div class="contact-info">
+            <h2>Contact Me</h2>
             <p><i class="bx bx-map"></i> Lampang 52240, Thailand</p>
             <p><i class="bx bx-phone"></i> 089-266-3290</p>
             <p>
@@ -73,100 +95,132 @@
               >
             </p>
           </div>
-        </div>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="main-content">
-        <section id="home" class="section">
-          <h1>I'm PJ.Nut</h1>
-          <h4><a href="#">Download My CV</a></h4>
         </section>
 
+        <!-- About -->
         <section id="about" class="section">
           <h2>Who Am I?</h2>
           <p>
-            Currently a third-year student at RMUTL Chiang Mai, majoring in
-            Computer Engineering. I enjoy system engineering and web
-            development.
+            Currently a third-year student at Rajamangala University of
+            Technology Lanna Chiang Mai, majoring in Computer Engineering. I
+            have a strong interest in system engineering and web development. I
+            enjoy learning about topics related to my interests.
           </p>
+          <div class="card-row">
+            <div class="card-icon">
+              <i class="bx bxs-bulb"></i>
+              <h3>Fast Learner</h3>
+            </div>
+            <div class="card-icon">
+              <i class="bx bxs-chat"></i>
+              <h3>Communication</h3>
+            </div>
+            <div class="card-icon">
+              <i class="bx bxs-group"></i>
+              <h3>Teamwork</h3>
+            </div>
+            <div class="card-icon">
+              <i class="bx bxs-universal-access"></i>
+              <h3>Adaptability & Flexibility</h3>
+            </div>
+          </div>
         </section>
 
+       <!-- Skills-->
         <section id="skills" class="section">
-          <h2>My Skills</h2>
-          <div class="skills">
-            <div>
-              <strong>Hard Skills</strong>
-              <ul>
-                <li>Languages: JavaScript, Dart, Python, C/C++</li>
-                <li>Frameworks: React, Node, Flutter</li>
-                <li>Tools: Git, MySQL, Firebase, VM, Raspberry Pi</li>
+          <h2>Skills</h2>
+          <div class="skills" id="accordion">
+            <!-- Languages -->
+            <div class="nav-skill">
+              <button class="accordion-toggle">
+                Languages <span class="toggle-icon">+</span>
+              </button>
+              <ul class="slide-skill">
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">Dart</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">C/C++</a></li>
               </ul>
             </div>
-            <div>
-              <strong>Soft Skills</strong>
-              <ul>
-                <li>Fast Learner</li>
-                <li>Communication & Teamwork</li>
-                <li>Adaptability & Flexibility</li>
+
+            <!-- Frameworks -->
+            <div class="nav-skill">
+              <button class="accordion-toggle">
+                Frameworks <span class="toggle-icon">+</span>
+              </button>
+              <ul class="slide-skill">
+                <li><a href="#">React</a></li>
+                <li><a href="#">Node</a></li>
+                <li><a href="#">Flutter</a></li>
+                <li><a href="#">Express</a></li>
+              </ul>
+            </div>
+
+            <!-- Tools -->
+            <div class="nav-skill">
+              <button class="accordion-toggle">
+                Tools <span class="toggle-icon">+</span>
+              </button>
+              <ul class="slide-skill">
+                <li><a href="#">Git</a></li>
+                <li><a href="#">MySQL</a></li>
+                <li><a href="#">Firebase</a></li>
+                <li><a href="#">VM</a></li>
               </ul>
             </div>
           </div>
         </section>
 
+        <!-- Education -->
         <section id="education" class="section">
           <h2>Education</h2>
-          <div>
+          <article>
             <strong>Bachelor's Degree</strong>
             <p>Rajamangala University of Technology Lanna (2022 - Present)</p>
-          </div>
-          <div>
+          </article>
+          <article>
             <strong>High Vocational Certificate</strong>
             <p>Lampang Technical College (2020 - 2021)</p>
-          </div>
+          </article>
         </section>
 
+        <!-- Experience -->
         <section id="experience" class="section">
           <h2>Experience</h2>
-          <div>
+          <article>
             <strong>RMUTL Internship (2020–2021)</strong>
             <p>
-              Assistant Computer Technician – worked with network devices,
-              servers, and developed an IoT monitoring system.
+              Worked with network devices, servers, and developed an IoT
+              monitoring system.
             </p>
-          </div>
-          <div>
+          </article>
+          <article>
             <strong>Niti Computer (2018)</strong>
-            <p>
-              Technician Assistant – handled computer and printer maintenance
-              and repair.
-            </p>
-          </div>
+            <p>Computer and printer maintenance and repair.</p>
+          </article>
         </section>
 
+        <!-- Work -->
         <section id="work" class="section">
           <h2>Personal Work</h2>
-          <div>
+          <article>
             <strong>Project Management Web App</strong>
             <p>
-              Developed a web app to support IT project management at LTC, aimed
-              at reducing paper usage.
+              Developed to support IT projects at LTC and reduce paper usage.
             </p>
-          </div>
-          <div>
+          </article>
+          <article>
             <strong>Solar Tracking</strong>
             <p>
-              Compared solar panel efficiency. Designed ESP32-based control and
-              data system with 15–40% improvement.
+              ESP32-based solar tracking system, improving efficiency by 15–40%.
             </p>
-          </div>
-          <div>
+          </article>
+          <article>
             <strong>Smart Drop</strong>
             <p>
-              ESP32 IoT invention for competition. Led circuit design and
-              overall control system.
+              IoT project with ESP32; led hardware and control system design.
             </p>
-          </div>
+          </article>
         </section>
       </main>
     </div>
