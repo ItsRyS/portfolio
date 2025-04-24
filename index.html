@@ -4,30 +4,13 @@
     <meta charset="UTF-8" />
     <title>Rys Portfolio | PJ.Nut - Web Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Patthanan Jaichuai, a web developer and system engineering enthusiast based in Thailand."
-    />
+    <meta name="description" content="Portfolio of Patthanan Jaichuai, a web developer and system engineering enthusiast based in Thailand." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Sarabun:wght@200;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Sarabun:wght@200;400;600&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./src/style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="./src/assets/favicon-optimized.png"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/png" href="./src/assets/favicon-optimized.png" />
     <script type="module" src="./src/main.js" defer></script>
   </head>
 
@@ -36,15 +19,11 @@
     <button id="menu-toggle" aria-label="Open Menu">
       <i class="bx bx-menu"></i>
     </button>
+
     <div class="container">
-      <!-- Sidebar -->
       <aside id="sidebar">
         <div class="sidebar-profile">
-          <img
-            src="./src/assets/img/profile.jpg"
-            alt="Profile picture of Patthanan Jaichuai"
-            class="profile-img"
-          />
+          <img src="./src/assets/img/profile.jpg" alt="Patthanan Jaichuai" class="profile-img" />
           <div class="profile-name">
             <h2>Patthanan Jaichuai</h2>
             <p>Programmer in Thailand</p>
@@ -67,142 +46,68 @@
         </footer>
       </aside>
 
-      <!-- Main Content -->
       <main id="main-content">
-        <!-- Home -->
-        <section id="home" class="section" aria-label="Intro Section">
+        <header id="home" class="section" aria-label="Intro Section">
           <div class="intro-text">
             <h1>PJ.Nut - Web Developer</h1>
             <p class="subtext">Building modern, scalable web solutions.</p>
-            <a href="#work" class="btn-portfolio">VIEW PORTFOLIO</a>
+            <a href="#work" class="btn-portfolio">View Portfolio</a>
           </div>
 
-          <div class="contact-info">
-            <h2>Contact Me</h2>
+          <address class="contact-info">
             <p><i class="bx bx-map"></i> Lampang 52240, Thailand</p>
             <p><i class="bx bx-phone"></i> 089-266-3290</p>
-            <p>
-              <i class="bx bx-envelope"></i>
-              <a href="mailto:Patthananlt@gmail.com" rel="noopener noreferrer">Patthananlt@gmail.com</a>
-            </p>
-            <p>
-              <i class='bx bxl-github'></i>
-              <a href="https://github.com/ItsRyS" target="_blank" rel="noopener noreferrer"
-                >github.com/ItsRyS</a
-              >
-            </p>
-            <p>
-              <i class="bx bxl-linkedin"></i>
-              <a href="https://linkedin.com/in/ci2p-nut" target="_blank" rel="noopener noreferrer"
-                >linkedin.com/in/ci2p-nut</a
-              >
-            </p>
-          </div>
-        </section>
+            <p><i class="bx bx-envelope"></i> <a href="mailto:Patthananlt@gmail.com">Patthananlt@gmail.com</a></p>
+            <p><i class='bx bxl-github'></i> <a href="https://github.com/ItsRyS" target="_blank" rel="noopener noreferrer">github.com/ItsRyS</a></p>
+            <p><i class="bx bxl-linkedin"></i> <a href="https://linkedin.com/in/ci2p-nut" target="_blank" rel="noopener noreferrer">linkedin.com/in/ci2p-nut</a></p>
+          </address>
+        </header>
 
-        <!-- About -->
         <section id="about" class="section">
           <h2>Who Am I?</h2>
           <p>
-            Currently a third-year student at Rajamangala University of
-            Technology Lanna Chiang Mai, majoring in Computer Engineering. I
-            have a strong interest in system engineering and web development. I
-            enjoy learning about topics related to my interests.
+            I'm a third-year Computer Engineering student at RMUTL, Chiang Mai. Passionate about web development and system engineering.
           </p>
           <div class="card-row">
-            <div class="card-icon">
-              <i class="bx bxs-bulb"></i>
-              <h3>Fast Learner</h3>
-            </div>
-            <div class="card-icon">
-              <i class="bx bxs-chat"></i>
-              <h3>Communication</h3>
-            </div>
-            <div class="card-icon">
-              <i class="bx bxs-group"></i>
-              <h3>Teamwork</h3>
-            </div>
-            <div class="card-icon">
-              <i class="bx bxs-universal-access"></i>
-              <h3>Adaptability & Flexibility</h3>
-            </div>
+            <div class="card-icon"><i class="bx bxs-bulb"></i><h3>Fast Learner</h3></div>
+            <div class="card-icon"><i class="bx bxs-chat"></i><h3>Communication</h3></div>
+            <div class="card-icon"><i class="bx bxs-group"></i><h3>Teamwork</h3></div>
+            <div class="card-icon"><i class="bx bxs-universal-access"></i><h3>Adaptability</h3></div>
           </div>
         </section>
 
-        <!-- Skills-->
         <section id="skills" class="section">
           <h2>Skills</h2>
           <div class="skills-grid">
-            <div class="skills-card">
-              <i class="bx bxl-html5"></i>
-              <span class="skill-name">HTML</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-css3"></i>
-              <span class="skill-name">CSS</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-javascript"></i>
-              <span class="skill-name">JavaScript</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-python"></i>
-              <span class="skill-name">Python</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-c-plus-plus"></i>
-              <span class="skill-name">C/C++</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-react"></i>
-              <span class="skill-name">React</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-nodejs"></i>
-              <span class="skill-name">Node</span>
-            </div>
-            <div class="skills-card">
-              <i class="bx bxl-flutter"></i>
-              <span class="skill-name">Flutter</span>
-            </div>
-
-            <div class="skills-card">
-              <i class="bx bxs-data"></i>
-              <span class="skill-name">MySQL</span>
-            </div>
+            <div class="skills-card"><i class="bx bxl-html5"></i><span class="skill-name">HTML</span></div>
+            <div class="skills-card"><i class="bx bxl-css3"></i><span class="skill-name">CSS</span></div>
+            <div class="skills-card"><i class="bx bxl-javascript"></i><span class="skill-name">JavaScript</span></div>
+            <div class="skills-card"><i class="bx bxl-python"></i><span class="skill-name">Python</span></div>
+            <div class="skills-card"><i class="bx bxl-c-plus-plus"></i><span class="skill-name">C/C++</span></div>
+            <div class="skills-card"><i class="bx bxl-react"></i><span class="skill-name">React</span></div>
+            <div class="skills-card"><i class="bx bxl-nodejs"></i><span class="skill-name">Node</span></div>
+            <div class="skills-card"><i class="bx bxl-flutter"></i><span class="skill-name">Flutter</span></div>
+            <div class="skills-card"><i class="bx bxs-data"></i><span class="skill-name">MySQL</span></div>
           </div>
         </section>
 
-        <!-- Education -->
         <section id="education" class="section">
           <h2>Education</h2>
           <div class="education" id="accordion-education">
             <div class="nav-education">
-              <button class="accordion-toggle">
-                Bachelor's Degree <span class="toggle-icon">+</span>
-              </button>
+              <button class="accordion-toggle">Bachelor's Degree <span class="toggle-icon">+</span></button>
               <ul class="slide-education">
-                <li>
-                  <p>
-                    Rajamangala University of Technology Lanna (2022 - Present)
-                  </p>
-                </li>
+                <li><p>RMUTL (2022 - Present)</p></li>
               </ul>
             </div>
             <div class="nav-education">
-              <button class="accordion-toggle">
-                High Vocational Certificate <span class="toggle-icon">+</span>
-              </button>
+              <button class="accordion-toggle">High Vocational Certificate <span class="toggle-icon">+</span></button>
               <ul class="slide-education">
-                <li>
-                  <p>Lampang Technical College (2020 - 2021)</p>
-                </li>
+                <li><p>Lampang Technical College (2020 - 2021)</p></li>
               </ul>
             </div>
           </div>
         </section>
-
-        <!-- Experience -->
 
         <section id="experience" class="section">
           <h2>Experience</h2>
@@ -212,18 +117,14 @@
               <div class="timeline-date">2020-2021</div>
               <div class="timeline-content">
                 <h3>RMUTL Internship</h3>
-                <p>
-                  Worked with network devices, servers, and developed an IoT
-                  monitoring system.
-                </p>
+                <p>Worked with network devices, servers, and IoT system development.</p>
                 <ul class="timeline-details">
-                  <li>Network configuration and maintenance</li>
+                  <li>Network configuration</li>
                   <li>Server administration</li>
-                  <li>IoT system development</li>
+                  <li>IoT development</li>
                 </ul>
               </div>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-date">2018</div>
@@ -240,52 +141,36 @@
           </div>
         </section>
 
-        <!-- Work -->
         <section id="work" class="section">
           <h2>Recent Blog</h2>
           <div class="work-row">
             <div class="work-item">
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <article>
-                  <img src="./src/assets/img/brz.jpg" alt="Preview of LPTC-IT-PMS project" />
-                  <div class="meta">
-                    <span>April 14, 2018</span> | <span>Web Design</span>
-                  </div>
+                  <img src="./src/assets/img/brz.jpg" alt="Preview of LPTC-IT-PMS project" loading="lazy" />
+                  <div class="meta"><span>April 14, 2018</span> | <span>Web Design</span></div>
                   <h3>LPTC-IT-PMS</h3>
-                  <p>
-                    Developed to support IT projects at LTC and reduce paper
-                    usage.
-                  </p>
+                  <p>Developed to support IT projects at LTC and reduce paper usage.</p>
                 </article>
               </a>
             </div>
             <div class="work-item">
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <article>
-                  <img src="./src/assets/img/sui.jpg" alt="Image of the Solar Tracking Project showcasing an ESP32-based system for improved solar efficiency" />
-                  <div class="meta">
-                    <span>April 14, 2018</span> | <span>Web Design</span>
-                  </div>
+                  <img src="./src/assets/img/sui.jpg" alt="Solar Tracking Project" loading="lazy" />
+                  <div class="meta"><span>April 14, 2018</span> | <span>Web Design</span></div>
                   <h3>Solar Tracking</h3>
-                  <p>
-                    ESP32-based solar tracking system, improving efficiency by
-                    15–40%.
-                  </p>
+                  <p>ESP32-based solar tracking system, improving efficiency by 15–40%.</p>
                 </article>
               </a>
             </div>
             <div class="work-item">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <article>
-                  <img src="./src/assets/img/sui2.jpg" alt="Smart Drop IoT project preview image" />
-                  <div class="meta">
-                    <span>April 14, 2018</span> | <span>Inspiration</span>
-                  </div>
+                  <img src="./src/assets/img/sui2.jpg" alt="Smart Drop IoT Project" loading="lazy" />
+                  <div class="meta"><span>April 14, 2018</span> | <span>Inspiration</span></div>
                   <h3>Smart Drop</h3>
-                  <p>
-                    IoT project with ESP32; led hardware and control system
-                    design.
-                  </p>
+                  <p>IoT project with ESP32; led hardware and control system design.</p>
                 </article>
               </a>
             </div>
