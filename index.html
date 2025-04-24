@@ -24,7 +24,10 @@
       type="image/png"
       href="./src/assets/favicon-optimized.png"
     />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script type="module" src="./src/main.js" defer></script>
   </head>
 
@@ -38,7 +41,7 @@
       <aside id="sidebar">
         <div class="sidebar-profile">
           <img
-            src="/src/assets/img/profile.jpg"
+            src="./src/assets/img/profile.jpg"
             alt="Profile picture of Patthanan Jaichuai"
             class="profile-img"
           />
@@ -80,17 +83,17 @@
             <p><i class="bx bx-phone"></i> 089-266-3290</p>
             <p>
               <i class="bx bx-envelope"></i>
-              <a href="mailto:Patthananlt@gmail.com">Patthananlt@gmail.com</a>
+              <a href="mailto:Patthananlt@gmail.com" rel="noopener noreferrer">Patthananlt@gmail.com</a>
             </p>
             <p>
-              <i class="bx bxl-github"></i>
-              <a href="https://github.com/ItsRyS" target="_blank"
+              <i class='bx bxl-github'></i>
+              <a href="https://github.com/ItsRyS" target="_blank" rel="noopener noreferrer"
                 >github.com/ItsRyS</a
               >
             </p>
             <p>
               <i class="bx bxl-linkedin"></i>
-              <a href="https://linkedin.com/in/ci2p-nut" target="_blank"
+              <a href="https://linkedin.com/in/ci2p-nut" target="_blank" rel="noopener noreferrer"
                 >linkedin.com/in/ci2p-nut</a
               >
             </p>
@@ -126,47 +129,46 @@
           </div>
         </section>
 
-       <!-- Skills-->
+        <!-- Skills-->
         <section id="skills" class="section">
           <h2>Skills</h2>
-          <div class="skills" id="accordion">
-            <!-- Languages -->
-            <div class="nav-skill">
-              <button class="accordion-toggle">
-                Languages <span class="toggle-icon">+</span>
-              </button>
-              <ul class="slide-skill">
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">Dart</a></li>
-                <li><a href="#">Python</a></li>
-                <li><a href="#">C/C++</a></li>
-              </ul>
+          <div class="skills-grid">
+            <div class="skills-card">
+              <i class="bx bxl-html5"></i>
+              <span class="skill-name">HTML</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-css3"></i>
+              <span class="skill-name">CSS</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-javascript"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-python"></i>
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-c-plus-plus"></i>
+              <span class="skill-name">C/C++</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-react"></i>
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-nodejs"></i>
+              <span class="skill-name">Node</span>
+            </div>
+            <div class="skills-card">
+              <i class="bx bxl-flutter"></i>
+              <span class="skill-name">Flutter</span>
             </div>
 
-            <!-- Frameworks -->
-            <div class="nav-skill">
-              <button class="accordion-toggle">
-                Frameworks <span class="toggle-icon">+</span>
-              </button>
-              <ul class="slide-skill">
-                <li><a href="#">React</a></li>
-                <li><a href="#">Node</a></li>
-                <li><a href="#">Flutter</a></li>
-                <li><a href="#">Express</a></li>
-              </ul>
-            </div>
-
-            <!-- Tools -->
-            <div class="nav-skill">
-              <button class="accordion-toggle">
-                Tools <span class="toggle-icon">+</span>
-              </button>
-              <ul class="slide-skill">
-                <li><a href="#">Git</a></li>
-                <li><a href="#">MySQL</a></li>
-                <li><a href="#">Firebase</a></li>
-                <li><a href="#">VM</a></li>
-              </ul>
+            <div class="skills-card">
+              <i class="bx bxs-data"></i>
+              <span class="skill-name">MySQL</span>
             </div>
           </div>
         </section>
@@ -174,53 +176,120 @@
         <!-- Education -->
         <section id="education" class="section">
           <h2>Education</h2>
-          <article>
-            <strong>Bachelor's Degree</strong>
-            <p>Rajamangala University of Technology Lanna (2022 - Present)</p>
-          </article>
-          <article>
-            <strong>High Vocational Certificate</strong>
-            <p>Lampang Technical College (2020 - 2021)</p>
-          </article>
+          <div class="education" id="accordion-education">
+            <div class="nav-education">
+              <button class="accordion-toggle">
+                Bachelor's Degree <span class="toggle-icon">+</span>
+              </button>
+              <ul class="slide-education">
+                <li>
+                  <p>
+                    Rajamangala University of Technology Lanna (2022 - Present)
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="nav-education">
+              <button class="accordion-toggle">
+                High Vocational Certificate <span class="toggle-icon">+</span>
+              </button>
+              <ul class="slide-education">
+                <li>
+                  <p>Lampang Technical College (2020 - 2021)</p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <!-- Experience -->
+
         <section id="experience" class="section">
           <h2>Experience</h2>
-          <article>
-            <strong>RMUTL Internship (2020–2021)</strong>
-            <p>
-              Worked with network devices, servers, and developed an IoT
-              monitoring system.
-            </p>
-          </article>
-          <article>
-            <strong>Niti Computer (2018)</strong>
-            <p>Computer and printer maintenance and repair.</p>
-          </article>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2020-2021</div>
+              <div class="timeline-content">
+                <h3>RMUTL Internship</h3>
+                <p>
+                  Worked with network devices, servers, and developed an IoT
+                  monitoring system.
+                </p>
+                <ul class="timeline-details">
+                  <li>Network configuration and maintenance</li>
+                  <li>Server administration</li>
+                  <li>IoT system development</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2018</div>
+              <div class="timeline-content">
+                <h3>Niti Computer</h3>
+                <p>Computer and printer maintenance and repair.</p>
+                <ul class="timeline-details">
+                  <li>Hardware troubleshooting</li>
+                  <li>System maintenance</li>
+                  <li>Customer service</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- Work -->
         <section id="work" class="section">
-          <h2>Personal Work</h2>
-          <article>
-            <strong>Project Management Web App</strong>
-            <p>
-              Developed to support IT projects at LTC and reduce paper usage.
-            </p>
-          </article>
-          <article>
-            <strong>Solar Tracking</strong>
-            <p>
-              ESP32-based solar tracking system, improving efficiency by 15–40%.
-            </p>
-          </article>
-          <article>
-            <strong>Smart Drop</strong>
-            <p>
-              IoT project with ESP32; led hardware and control system design.
-            </p>
-          </article>
+          <h2>Recent Blog</h2>
+          <div class="work-row">
+            <div class="work-item">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <article>
+                  <img src="./src/assets/img/brz.jpg" alt="Preview of LPTC-IT-PMS project" />
+                  <div class="meta">
+                    <span>April 14, 2018</span> | <span>Web Design</span>
+                  </div>
+                  <h3>LPTC-IT-PMS</h3>
+                  <p>
+                    Developed to support IT projects at LTC and reduce paper
+                    usage.
+                  </p>
+                </article>
+              </a>
+            </div>
+            <div class="work-item">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <article>
+                  <img src="./src/assets/img/sui.jpg" alt="Image of the Solar Tracking Project showcasing an ESP32-based system for improved solar efficiency" />
+                  <div class="meta">
+                    <span>April 14, 2018</span> | <span>Web Design</span>
+                  </div>
+                  <h3>Solar Tracking</h3>
+                  <p>
+                    ESP32-based solar tracking system, improving efficiency by
+                    15–40%.
+                  </p>
+                </article>
+              </a>
+            </div>
+            <div class="work-item">
+              <a href="http://" target="_blank" rel="noopener noreferrer">
+                <article>
+                  <img src="./src/assets/img/sui2.jpg" alt="Smart Drop IoT project preview image" />
+                  <div class="meta">
+                    <span>April 14, 2018</span> | <span>Inspiration</span>
+                  </div>
+                  <h3>Smart Drop</h3>
+                  <p>
+                    IoT project with ESP32; led hardware and control system
+                    design.
+                  </p>
+                </article>
+              </a>
+            </div>
+          </div>
         </section>
       </main>
     </div>

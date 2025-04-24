@@ -23,23 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 👉 Accordion Dropdown Control
-  const accordions = document.querySelectorAll(".accordion-toggle");
+// 👉 Accordion Dropdown Control
+document.querySelectorAll(".accordion-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const parent = btn.closest(".nav-education");
+    const container = parent.parentElement;
 
-  accordions.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const parent = btn.closest(".nav-skill");
-      const wasActive = parent.classList.contains("active");
+    const wasActive = parent.classList.contains("active");
 
-      // ปิดทั้งหมดก่อน
-      document.querySelectorAll(".nav-skill").forEach((el) =>
-        el.classList.remove("active")
-      );
+    // ปิดเฉพาะในกลุ่มเดียวกัน
+    container.querySelectorAll(".nav-education").forEach((el) =>
+      el.classList.remove("active")
+    );
 
-      // ถ้าไม่ได้เปิดอยู่ก่อนหน้า → เปิดอันที่คลิก
-      if (!wasActive) {
-        parent.classList.add("active");
-      }
-    });
+    if (!wasActive) {
+      parent.classList.add("active");
+    }
   });
+});
+
 });
