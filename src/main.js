@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarLinks = document.querySelectorAll(".sidebar-menu a");
 
   if (toggleBtn && sidebar && overlay) {
-    // Toggle sidebar
     toggleBtn.addEventListener("click", () => {
       const isActive = sidebar.classList.toggle("active");
       overlay.classList.toggle("active");
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.setAttribute("aria-hidden", !isActive);
     });
 
-    // Close sidebar when clicking overlay
     overlay.addEventListener("click", () => {
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Sidebar link click handler
   sidebarLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       sidebar.classList.remove("active");
@@ -49,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Reset sidebar on resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       sidebar.classList.remove("active");
@@ -59,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Highlight current section in sidebar (with debounce)
   let scrollTimeout;
   window.addEventListener(
     "scroll",
