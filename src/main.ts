@@ -1,37 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".current-year").textContent =
-    new Date().getFullYear();
+  const yearEl = document.querySelector(".current-year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const sidebar = document.querySelector(".sidebar");
-  const overlay = document.querySelector(".sidebar-overlay");
-  const sidebarLinks = document.querySelectorAll(".sidebar-menu a");
+  const toggleBtn = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const sidebar = document.querySelector<HTMLElement>(".sidebar");
+  const overlay = document.querySelector<HTMLElement>(".sidebar-overlay");
+  const sidebarLinks =
+    document.querySelectorAll<HTMLAnchorElement>(".sidebar-menu a");
+
+  function closeSidebar(): void {
+    sidebar?.classList.remove("active");
+    overlay?.classList.remove("active");
+    document.body.style.overflow = "auto";
+    sidebar?.setAttribute("aria-hidden", "true");
+  }
 
   if (toggleBtn && sidebar && overlay) {
     toggleBtn.addEventListener("click", () => {
       const isActive = sidebar.classList.toggle("active");
       overlay.classList.toggle("active");
       document.body.style.overflow = isActive ? "hidden" : "auto";
-      sidebar.setAttribute("aria-hidden", !isActive);
+      sidebar.setAttribute("aria-hidden", String(!isActive));
     });
 
-    overlay.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
-      document.body.style.overflow = "auto";
-      sidebar.setAttribute("aria-hidden", "true");
-    });
+    overlay.addEventListener("click", closeSidebar);
   }
 
   sidebarLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
-      document.body.style.overflow = "auto";
-      sidebar.setAttribute("aria-hidden", "true");
+      closeSidebar();
 
       const targetId = link.getAttribute("href")?.substring(1);
-      const targetElement = document.getElementById(targetId);
+      const targetElement = targetId
+        ? document.getElementById(targetId)
+        : null;
 
       if (targetElement && window.innerWidth <= 768) {
         event.preventDefault();
@@ -40,22 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
           targetElement.getBoundingClientRect().top +
           window.pageYOffset +
           yOffset;
-
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     });
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
-      document.body.style.overflow = "auto";
-      sidebar.setAttribute("aria-hidden", "true");
-    }
+    if (window.innerWidth > 768) closeSidebar();
   });
 
-  let scrollTimeout;
+  let scrollTimeout: ReturnType<typeof setTimeout>;
   window.addEventListener(
     "scroll",
     () => {
@@ -65,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true }
   );
 
-  function highlightCurrentSection() {
+  function highlightCurrentSection(): void {
     const scrollPosition = window.scrollY;
 
-    document.querySelectorAll("section").forEach((section) => {
+    document.querySelectorAll<HTMLElement>("section").forEach((section) => {
       const sectionTop = section.offsetTop - 100;
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute("id");
@@ -78,12 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollPosition < sectionTop + sectionHeight
       ) {
         sidebarLinks.forEach((item) => item.classList.remove("selected"));
-        const currentMenuItem = document.querySelector(
+        const currentMenuItem = document.querySelector<HTMLAnchorElement>(
           `.sidebar-menu a[href="#${sectionId}"]`
         );
-        if (currentMenuItem) {
-          currentMenuItem.classList.add("selected");
-        }
+        currentMenuItem?.classList.add("selected");
       }
     });
   }
