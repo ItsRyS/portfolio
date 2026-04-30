@@ -12,10 +12,25 @@
       content="DevOps engineer, portfolio, Zabbix, Telegraf, n8n, monitoring, automation, infrastructure, engineer in Thailand"
     />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a1929" />
     <title>Rys Portfolio | PJ.Nut - DevOps Engineer</title>
 
+    <!-- Prevent flash of wrong theme before CSS loads -->
+    <script>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute(
+          "data-theme",
+          stored || (prefersDark ? "dark" : "light")
+        );
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Sarabun:wght@200;400;600&display=swap"
       rel="stylesheet"
@@ -35,23 +50,27 @@
   </head>
 
   <body>
-    <div class="sidebar-overlay"></div>
+    <div class="sidebar-overlay" role="presentation"></div>
 
-    <button class="menu-toggle" aria-label="Open Menu">
-      <i class="bx bx-menu"></i>
+    <button type="button" class="menu-toggle" aria-label="Open navigation menu">
+      <i class="bx bx-menu" aria-hidden="true"></i>
     </button>
 
     <div class="container">
-      <aside class="sidebar">
+      <aside class="sidebar" aria-label="Site navigation">
         <div class="sidebar-profile">
           <img
             src="./src/assets/img/profile.jpg"
-            alt="Patthanan Jaichuai, Web Developer"
+            alt="Patthanan Jaichuai, DevOps Engineer"
             class="profile-img"
+            width="140"
+            height="140"
+            loading="eager"
+            decoding="async"
           />
           <div class="profile-name">
             <h2>Patthanan Jaichuai</h2>
-            <p>Programmer in Thailand</p>
+            <p>DevOps Engineer</p>
           </div>
         </div>
 
@@ -66,42 +85,51 @@
           </ul>
         </nav>
 
+        <button
+          type="button"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <span class="theme-toggle-label">Dark Mode</span>
+          <i class="bx bx-moon" aria-hidden="true"></i>
+        </button>
+
         <footer class="sidebar-footer">
           <p>&copy; <span class="current-year"></span> All rights reserved</p>
         </footer>
       </aside>
 
       <main class="main-content">
-        <section id="home" aria-label="Intro Section" class="home">
+        <section id="home" aria-labelledby="home-heading" class="home">
           <div class="intro-container">
             <div class="intro-text">
-              <h1>PJ.Nut - DevOps Engineer</h1>
+              <h1 id="home-heading">PJ.Nut - DevOps Engineer</h1>
               <p class="subtext">
                 Computer Engineering graduate from RMUTL, Chiang Mai. Currently
                 a DevOps Engineer at AskMe Solutions &amp; Consultants, focused
                 on monitoring, automation, and infrastructure reliability.
               </p>
-              <a href="/RESUME-Patthanan.pdf" class="btn-portfolio" download>
-                <i class="bx bx-download"></i> Download Resume
+              <a
+                href="/RESUME-Patthanan.pdf"
+                class="btn-portfolio"
+                download="RESUME-Patthanan.pdf"
+              >
+                <i class="bx bx-download" aria-hidden="true"></i> Download Resume
               </a>
             </div>
 
             <address class="contact-info">
-              <p><i class="bx bx-map"></i> Lampang 52240, Thailand</p>
+              <p><i class="bx bx-map" aria-hidden="true"></i> Lampang 52240, Thailand</p>
               <p>
-                <i class="bx bx-phone"></i>
+                <i class="bx bx-phone" aria-hidden="true"></i>
                 <a href="tel:+66892663290">089-266-3290</a>
               </p>
               <p>
-                <i class="bx bx-envelope"></i>
+                <i class="bx bx-envelope" aria-hidden="true"></i>
                 <a href="mailto:Patthananlt@gmail.com">Patthananlt@gmail.com</a>
               </p>
               <p>
-                <img
-                  src="https://cdn.simpleicons.org/github/000000"
-                  alt="GitHub Logo"
-                  class="icon-logo"
-                />
+                <i class="bx bxl-github" aria-hidden="true"></i>
                 <a
                   href="https://github.com/ItsRyS"
                   target="_blank"
@@ -110,7 +138,7 @@
                 >
               </p>
               <p>
-                <i class="bx bxl-linkedin"></i>
+                <i class="bx bxl-linkedin" aria-hidden="true"></i>
                 <a
                   href="https://linkedin.com/in/ci2p-nut"
                   target="_blank"
@@ -122,70 +150,79 @@
           </div>
         </section>
 
-        <section id="about">
+        <section id="about" aria-label="About">
+          <h2 class="sr-only">About</h2>
           <div class="card-row">
             <div class="card-icon">
-              <i class="bx bxs-bulb"></i>
+              <i class="bx bxs-bulb" aria-hidden="true"></i>
               <h3>Fast Learner</h3>
             </div>
             <div class="card-icon">
-              <i class="bx bxs-chat"></i>
+              <i class="bx bxs-chat" aria-hidden="true"></i>
               <h3>Communication</h3>
             </div>
             <div class="card-icon">
-              <i class="bx bxs-group"></i>
+              <i class="bx bxs-group" aria-hidden="true"></i>
               <h3>Teamwork</h3>
             </div>
             <div class="card-icon">
-              <i class="bx bxs-universal-access"></i>
+              <i class="bx bxs-universal-access" aria-hidden="true"></i>
               <h3>Adaptability</h3>
             </div>
           </div>
         </section>
 
-        <section id="skills">
-          <h2>Skills</h2>
+        <section id="skills" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Skills</h2>
           <div class="skills-grid">
             <div class="skills-card">
-              <i class="bx bxl-html5"></i><span class="skill-name">HTML</span>
+              <i class="bx bxl-html5" aria-hidden="true"></i>
+              <span class="skill-name">HTML</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxl-css3"></i><span class="skill-name">CSS</span>
+              <i class="bx bxl-css3" aria-hidden="true"></i>
+              <span class="skill-name">CSS</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxl-javascript"></i
-              ><span class="skill-name">JavaScript</span>
+              <i class="bx bxl-javascript" aria-hidden="true"></i>
+              <span class="skill-name">JavaScript</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxl-python"></i
-              ><span class="skill-name">Python</span>
+              <i class="bx bxl-python" aria-hidden="true"></i>
+              <span class="skill-name">Python</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxl-c-plus-plus"></i
-              ><span class="skill-name">C/C++</span>
+              <i class="bx bxl-c-plus-plus" aria-hidden="true"></i>
+              <span class="skill-name">C/C++</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxl-react"></i><span class="skill-name">React</span>
+              <i class="bx bxl-react" aria-hidden="true"></i>
+              <span class="skill-name">React</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxl-nodejs"></i><span class="skill-name">Node</span>
+              <i class="bx bxl-nodejs" aria-hidden="true"></i>
+              <span class="skill-name">Node</span>
             </div>
             <div class="skills-card">
               <img
                 src="https://raw.githubusercontent.com/mui/material-ui/master/docs/public/static/logo.png"
-                alt="Material UI Logo"
+                alt="Material UI"
                 class="skill-logo"
+                loading="lazy"
+                width="48"
+                height="48"
               />
               <span class="skill-name">Material UI</span>
             </div>
             <div class="skills-card">
-              <i class="bx bxs-data"></i><span class="skill-name">MySQL</span>
+              <i class="bx bxs-data" aria-hidden="true"></i>
+              <span class="skill-name">MySQL</span>
             </div>
           </div>
         </section>
 
-        <section id="education">
-          <h2>Education</h2>
+        <section id="education" aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
           <div class="edu-warp">
             <div class="nav-education">
               <p class="edu-head">Bachelor's Degree</p>
@@ -194,31 +231,29 @@
                   Rajamangala University of Technology Lanna Chiang Mai (2022 -
                   2025)
                 </li>
-                <span>GPA 3.54</span>
               </ul>
+              <span class="edu-gpa">GPA 3.54</span>
             </div>
 
             <div class="nav-education">
               <p class="edu-head">High Vocational Certificate</p>
               <ul class="edu-content">
                 <li>Lampang Technical College (2020 - 2021)</li>
-                <span>GPA 3.95</span>
               </ul>
+              <span class="edu-gpa">GPA 3.95</span>
             </div>
           </div>
         </section>
 
-        <section id="experience">
-          <h2>Experience</h2>
+        <section id="experience" aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Experience</h2>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-dot"></div>
+              <div class="timeline-dot" aria-hidden="true"></div>
               <div class="timeline-date">Nov 2025 - Present</div>
               <div class="timeline-content">
                 <h3>DevOps Engineer — AskMe Solutions &amp; Consultants Co., Ltd.</h3>
-                <p>
-                  Full-time DevOps role following internship conversion.
-                </p>
+                <p>Full-time DevOps role following internship conversion.</p>
                 <ul class="timeline-details">
                   <li>Infrastructure monitoring &amp; automation</li>
                   <li>CI/CD pipeline maintenance</li>
@@ -227,7 +262,7 @@
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-dot"></div>
+              <div class="timeline-dot" aria-hidden="true"></div>
               <div class="timeline-date">Jun 2025 - Oct 2025</div>
               <div class="timeline-content">
                 <h3>DevOps Intern — AskMe Solutions &amp; Consultants Co., Ltd.</h3>
@@ -248,8 +283,8 @@
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2020-2021</div>
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-date">2020 - 2021</div>
               <div class="timeline-content">
                 <h3>RMUTL Internship</h3>
                 <p>
@@ -264,7 +299,7 @@
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-dot"></div>
+              <div class="timeline-dot" aria-hidden="true"></div>
               <div class="timeline-date">2018</div>
               <div class="timeline-content">
                 <h3>Niti Computer</h3>
@@ -279,20 +314,22 @@
           </div>
         </section>
 
-        <section id="work">
-          <h2>Work</h2>
+        <section id="work" aria-labelledby="work-heading">
+          <h2 id="work-heading">Work</h2>
           <div class="work-row">
             <div class="work-item">
               <a
                 href="https://pms-client-production.up.railway.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="View LPTC IT PMS project (opens in new tab)"
               >
                 <article>
                   <img
                     src="./src/assets/img/pms.png"
                     alt="Preview of LPTC-IT-PMS project"
                     class="lazyload"
+                    loading="lazy"
                     width="400"
                     height="225"
                   />
@@ -303,56 +340,54 @@
                   <h3>LPTC IT PMS</h3>
                   <p>
                     Use modern technology programming languages to build a
-                    webapplication.
+                    web application.
                   </p>
                 </article>
               </a>
             </div>
 
             <div class="work-item">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <article>
-                  <img
-                    src="./src/assets/img/sui.jpg"
-                    alt="Solar Tracking Project"
-                    class="lazyload"
-                    width="400"
-                    height="225"
-                  />
-                  <div class="meta">
-                    <time datetime="2024-03-23">March 14, 2024</time> |
-                    <span>IoT</span>
-                  </div>
-                  <h3>Solar Tracking</h3>
-                  <p>
-                    ESP32-based solar tracking system, improving efficiency by
-                    15–40%.
-                  </p>
-                </article>
-              </a>
+              <article>
+                <img
+                  src="./src/assets/img/sui.jpg"
+                  alt="Solar Tracking Project — ESP32-based dual-axis solar tracker"
+                  class="lazyload"
+                  loading="lazy"
+                  width="400"
+                  height="225"
+                />
+                <div class="meta">
+                  <time datetime="2024-03-14">March 14, 2024</time> |
+                  <span>IoT</span>
+                </div>
+                <h3>Solar Tracking</h3>
+                <p>
+                  ESP32-based solar tracking system, improving efficiency by
+                  15–40%.
+                </p>
+              </article>
             </div>
 
             <div class="work-item">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <article>
-                  <img
-                    src="./src/assets/img/sui2.jpg"
-                    alt="Smart Drop IoT Project"
-                    class="lazyload"
-                    width="400"
-                    height="225"
-                  />
-                  <div class="meta">
-                    <time datetime="2022-06-7">June 7, 2022</time> |
-                    <span>IoT</span>
-                  </div>
-                  <h3>Smart Drop</h3>
-                  <p>
-                    Smart Drop, an invention used in the National Outstanding
-                    VocationalEducation Innovation : competition.
-                  </p>
-                </article>
-              </a>
+              <article>
+                <img
+                  src="./src/assets/img/sui2.jpg"
+                  alt="Smart Drop IoT Project — National Outstanding Vocational Education Innovation"
+                  class="lazyload"
+                  loading="lazy"
+                  width="400"
+                  height="225"
+                />
+                <div class="meta">
+                  <time datetime="2022-06-07">June 7, 2022</time> |
+                  <span>IoT</span>
+                </div>
+                <h3>Smart Drop</h3>
+                <p>
+                  Smart Drop, an invention used in the National Outstanding
+                  Vocational Education Innovation competition.
+                </p>
+              </article>
             </div>
           </div>
         </section>
