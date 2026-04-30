@@ -456,8 +456,9 @@
     content: "";
     position: absolute;
     left: 15px;
+    top: 20px;
     width: 2px;
-    height: 48%;
+    height: calc(100% - 40px);
     background: var(--primary-color);
   }
 
@@ -749,7 +750,6 @@
 
     .timeline::before {
       left: 10px;
-      height: 85%;
     }
 
     .timeline-item {
